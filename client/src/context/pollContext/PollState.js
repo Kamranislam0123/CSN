@@ -38,6 +38,7 @@ export const PollState = ({ children }) => {
   }
 
   const createPoll = async (userId, pollData) => {
+    console.log("from 43 ", pollData, userId);
     try {
       dispatch({
         type: POLL_LOADING,

@@ -8,6 +8,8 @@ import { NoticeState } from "./context/noticeContext/NoticeState"
 import { PollState } from "./context/pollContext/PollState"
 import { PostState } from "./context/postContext/PostState"
 import { UserState } from "./context/userContext/UserState"
+import { JobsState } from "./context/jobsContext/JobsState"
+import { BooksState } from "./context/booksContext/BooksState"
 
 export const App = () => {
   return (
@@ -17,9 +19,13 @@ export const App = () => {
           <PostState>
             <BlogState>
               <AdsState>
-                <NoticeState>
-                  <Routing />
-                </NoticeState>
+                <JobsState>
+                  <NoticeState>
+                    <BooksState>
+                      <Routing />
+                    </BooksState>
+                  </NoticeState>
+                </JobsState>
               </AdsState>
             </BlogState>
           </PostState>

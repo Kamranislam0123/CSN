@@ -26,6 +26,7 @@ import { SettingsPrivacy } from "../pages/Setting-Privacy/SettingsPrivacy"
 import { Bookmarks } from "../pages/Home/Bookmarks/Bookmarks"
 import { CampusSignup } from "../Login/CampusSignup"
 import { Notice } from "../pages/Home/Notice/Notice"
+import { Books } from "../pages/Books/Books"
 // import { Feedback } from "../pages/Feedback/Feedback"
 
 export const Routing = () => {
@@ -192,6 +193,7 @@ export const Routing = () => {
             <PrivateRoute exact path="/profile/:userId" component={Profile} />
             <PrivateRoute exact path="/fellows" component={Friends} />
             <PrivateRoute exact path="/notices" component={Notice} />
+            <PrivateRoute exact path="/books" component={Books} />
             <PrivateRoute
               exact
               path="/about-university"

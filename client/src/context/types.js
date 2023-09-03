@@ -50,3 +50,17 @@ export const ADS_LOADING = "ads_loading"
 export const ADS_GET_ALL = "ads_get_all"
 export const ADS_ERROR = "ads_error"
 export const ADS_CREATE = "ads_create"
+
+//Jobs
+export const JOBS_LOADING = "jobs_loading"
+export const JOBS_GET_ALL = "jobs_get_all"
+export const JOBS_ERROR = "jobs_error"
+export const JOBS_CREATE = "jobs_create"
+export const JOBS_SUCCESS = "jobs_success"
+
+//Jobs
+export const BOOKS_LOADING = "books_loading"
+export const BOOKS_GET_ALL = "books_get_all"
+export const BOOKS_ERROR = "books_error"
+export const BOOKS_CREATE = "books_create"
+export const BOOKS_SUCCESS = "books_success"

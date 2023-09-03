@@ -10,6 +10,9 @@ const {
   getJob,
   updateJob,
   deleteJob,
+  likeJob,
+  unlikeJob,
+  commentJob,
 } = require("../controllers/jobs.controller");
 const { getUserById } = require("../controllers/user.controller");
 const router = express.Router();
@@ -20,6 +23,24 @@ router.param("jobId", getJobById);
 
 // create job
 router.post("/create/job/:userId", isSignedIn, isAuthenticated, createJob);
+
+// Like a job
+router.put("/job/like/:userId/:jobId", isSignedIn, isAuthenticated, likeJob)
+
+// Unlike a job
+router.put(
+  "/job/unlike/:userId/:jobId",
+  isSignedIn,
+  isAuthenticated,
+  unlikeJob
+)
+// comment a job
+router.put(
+  "/job/comment/:userId/:jobId",
+  isSignedIn,
+  isAuthenticated,
+  commentJob
+)
 
 // read all jobs
 router.get("/jobs", isSignedIn, allJobs);

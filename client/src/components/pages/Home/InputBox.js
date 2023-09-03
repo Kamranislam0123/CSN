@@ -13,7 +13,9 @@ import { PollModal } from "../Modals/PollModal"
 import { API } from "../../../utils/proxy"
 import { PollContext } from "../../../context/pollContext/PollContext"
 import { AdsContext } from "../../../context/adsContext/AdsContext"
+import { JobsContext } from "../../../context/jobsContext/JobsContext"
 import { AdsModal } from "../Modals/AdsModal"
+import { JobsModal } from "../Modals/JobsModal"
 
 export const InputBox = () => {
   const authContext = useContext(AuthContext)
@@ -21,10 +23,12 @@ export const InputBox = () => {
   const blogContext = useContext(BlogContext)
   const pollContext = useContext(PollContext)
   const adsContext = useContext(AdsContext)
+  const jobsContext = useContext(JobsContext)
   const [showPost, setShowPost] = useState(false)
   const [showBlog, setShowBlog] = useState(false)
   const [showPoll, setShowPoll] = useState(false)
   const [showAds, setShowAds] = useState(false)
+  const [showJobs, setShowJobs] = useState(false)
   const handleModalPoll = () => {
     setShowPoll(!showPoll)
   }
@@ -39,6 +43,10 @@ export const InputBox = () => {
   const handleModalAds = () => {
     // console.log(showBlog)
     setShowAds(!showAds)
+  }
+  const handleModalJobs = () => {
+    // console.log(showBlog)
+    setShowJobs(!showJobs)
   }
   return (
     <>
@@ -67,6 +75,15 @@ export const InputBox = () => {
           adsFunction={adsContext.createAd}
           ads={undefined}
           handleModal={handleModalAds}
+        />
+      )}
+      {showJobs && (
+        <JobsModal
+          modalTitle="Create Jobs"
+          show={showJobs}
+          jobsFunction={jobsContext.createJob}
+          jobs={undefined}
+          handleModal={handleModalJobs}
         />
       )}
       {showPoll && (
@@ -134,6 +151,11 @@ export const InputBox = () => {
           <Grid item>
             <Button onClick={handleModalPoll} startIcon={<PollIcon />}>
               Poll
+            </Button>
+          </Grid>
+          <Grid item>
+            <Button onClick={handleModalJobs} startIcon={<BrokenImageIcon />}>
+              Post Job
             </Button>
           </Grid>
         </Grid>
