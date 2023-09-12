@@ -108,7 +108,7 @@ export const BooksCard = ({ book }) => {
                 // <MenuItem onClick={handleModalAds}>Edit</MenuItem>
                 <MenuItem>Edit</MenuItem>
               ) : null}
-              {authContext.user._id === book.user._id ? (
+              {authContext.user._id === book.user._id || authContext.user.role === 1 ? (
                 <MenuItem
                   onClick={() => {
                     booksContext.deleteBook(authContext.user._id, book._id)

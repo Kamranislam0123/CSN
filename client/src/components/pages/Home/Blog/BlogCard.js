@@ -39,7 +39,7 @@ import { UserContext } from "../../../../context/userContext/UserContext"
 import { API } from "../../../../utils/proxy"
 
 export const BlogCard = ({ blog }) => {
-  console.log(blog)
+  // console.log(blog)
   const userContext = useContext(UserContext)
   const history = useHistory()
   const authContext = useContext(AuthContext)
@@ -167,7 +167,7 @@ export const BlogCard = ({ blog }) => {
                 {authContext.user._id === blog.user._id ? (
                   <MenuItem onClick={handleModalBlog}>Edit</MenuItem>
                 ) : null}
-                {authContext.user._id === blog.user._id ? (
+                {authContext.user._id === blog.user._id || authContext.user.role === 1 ? (
                   <MenuItem
                     onClick={() => {
                       blogContext.deleteBlog(authContext.user._id, blog._id)

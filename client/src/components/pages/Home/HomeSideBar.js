@@ -8,7 +8,7 @@ import {
   Paper,
   Typography,
 } from "@material-ui/core"
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import { AuthContext } from "../../../context/authContext/authContext"
 import PeopleAltRoundedIcon from "@material-ui/icons/PeopleAltRounded"
 import SupervisedUserCircleRoundedIcon from "@material-ui/icons/SupervisedUserCircleRounded"
@@ -17,6 +17,8 @@ import EventNoteRoundedIcon from "@material-ui/icons/EventNoteRounded"
 import { useHistory } from "react-router-dom"
 import { NoticeCard } from "./Notice/NoticeCard"
 import { API } from "../../../utils/proxy"
+import { PostContext } from "../../../context/postContext/postContext"
+import { UserContext } from "../../../context/userContext/UserContext"
 
 export const HomeSideBar = () => {
   const authContext = useContext(AuthContext)
@@ -112,7 +114,7 @@ export const HomeSideBar = () => {
           </ListItem>
         </List>
       </Paper>
-      <NoticeCard />
+      {/* <NoticeCard post={postContext.post} /> */}
     </div>
   )
 }

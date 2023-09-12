@@ -21,7 +21,7 @@ import { API } from "../../../../utils/proxy"
 import { AdsModal } from "../../Modals/AdsModal"
 
 export const AdsCard = ({ ads }) => {
-  console.log(ads)
+  // console.log(ads)
   const history = useHistory()
   const authContext = useContext(AuthContext)
   // const userContext = useContext(UserContext)
@@ -71,7 +71,7 @@ export const AdsCard = ({ ads }) => {
               {authContext.user._id === ads.user._id ? (
                 <MenuItem onClick={handleModalAds}>Edit</MenuItem>
               ) : null}
-              {authContext.user._id === ads.user._id ? (
+              {authContext.user._id === ads.user._id || authContext.user.role === 1 ? (
                 <MenuItem
                   onClick={() => {
                     adsContext.deletePost(authContext.user._id, ads._id)

@@ -50,7 +50,7 @@ export const AboutUniversity = () => {
 												gutterBottom
 												variant="subtitle1">
 												<a
-													href=""
+													href="https://www.stamforduniversity.edu.bd/"
 													target="_blank"
 													rel="noreferrer noopener">
 													{
@@ -83,19 +83,19 @@ export const AboutUniversity = () => {
 								<br />
 								<Typography variant="body2">
 									{
-										"The academic programmes offered by the University are recognised by the University Grants Commission of India and various other Statutory Bodies, Councils, whichever are applicable in individual cases."
+										"The mission of Stamford University, Bangladesh is to provide and facilitate global standard of education to its students of all walks of life irrespective of gender, religion, cast, creed, color, age, time and place, with a view to preparing them for leadership and service in multicultural, global and technological societies by helping the students in succeeding academically and in the transition from university life to productive life."
 									}
 								</Typography>
 								<br />
 								<Typography variant="body2">
 									{
-										"Recognition by the University Grants Commission of India (UGC): Gautam Buddha University is recognized by the University Grants Commission of India vide F.9-18/2009 (CRP-I) dated 13 May 2009 under section 2(f) of UGC Act 1956. Through this the University has been empowered to award degrees as specified by UGC under section 22 of the UGC Act 1956 at its main campus with the approval of Statutory Councils, wherever required."
+										"Stamford University, Bangladesh is moving forward with a vision of Excellence - 'Moving Educational Excellence from Good to Great'. Form good to better to excellent and from excellent to great. With a long range Strategic Planning the University continues the transformative process of being, one of the premier universities of higher education in this region and it is evident by the milestones that have been set by Stamford Group in Bangladesh over te last 10 years. The current plan articulates new directions for the university."
 									}
 								</Typography>
 								<br />
 								<Typography variant="body2">
 									{
-										"Recognition and Inclusion by the University Grants Commission of India (UGC) under section 12 B of the University Grants Commission, UGC ACT 1956. Recognised under UGC Section 12B and NAAC accredited with B+ Grade."
+										
 									}
 								</Typography>
 								<br />

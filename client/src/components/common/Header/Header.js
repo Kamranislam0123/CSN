@@ -119,13 +119,13 @@ const Header = ({ history }) => {
           </div>
 
           <div className="header-part-3">
-            <TextField
+            {/* <TextField
               id="outlined-password-input"
               label="Search"
               type="text"
               size="small"
               variant="outlined"
-            />
+            /> */}
             <IconButton onClick={handleMoreOption}>
               <MoreVertIcon />
             </IconButton>

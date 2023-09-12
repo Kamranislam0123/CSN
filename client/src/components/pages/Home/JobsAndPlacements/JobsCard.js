@@ -129,7 +129,7 @@ export const JobsCard = ({ job }) => {
                 // <MenuItem onClick={handleModalAds}>Edit</MenuItem>
                 <MenuItem>Edit</MenuItem>
               ) : null}
-              {authContext.user._id === job.user._id ? (
+              {authContext.user._id === job.user._id || authContext.user.role === 1 ? (
                 <MenuItem
                   onClick={() => {
                     jobsContext.deleteJob(authContext.user._id, job._id)

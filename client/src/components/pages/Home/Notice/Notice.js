@@ -1,25 +1,37 @@
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Grid,
-  Typography,
-} from "@material-ui/core"
-import React, { useContext, useEffect } from "react"
-import { NoticeContext } from "../../../../context/noticeContext/NoticeContext"
+import React, { useContext, useEffect, useState } from "react"
+// import { NoticeContext } from "../../../../context/noticeContext/NoticeContext"
+import { PostContext } from "../../../../context/postContext/postContext"
+import { UserContext } from "../../../../context/userContext/UserContext"
 import { Home } from "../../../common/Base/Home"
+import { LoadingPost } from "../Post/LoadingPost"
+import { NoticeCard } from "./NoticeCard"
 
 export const Notice = () => {
-  const noticeContext = useContext(NoticeContext)
+  // const noticeContext = useContext(NoticeContext)
+  // useEffect(() => {
+  //   noticeContext.getNotices()
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [])
+const postContext = useContext(PostContext)
+  const userContext = useContext(UserContext)
   useEffect(() => {
-    noticeContext.getNotices()
+    postContext.getAllPost()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+  // console.log(notice)
 
   return (
     <Home>
-      <div>
+      <div className="px-2">
+        {postContext.loading || userContext.loading ? (
+          <div>loading...</div>
+        ) : (
+              <div>
+                <NoticeCard post={postContext.post} />
+              </div>
+        )}
+      </div>
+      {/* <div>
         {noticeContext.loading ? (
           <div>loading</div>
         ) : (
@@ -62,7 +74,7 @@ export const Notice = () => {
             )
           })
         )}
-      </div>
+      </div> */}
     </Home>
   )
 }

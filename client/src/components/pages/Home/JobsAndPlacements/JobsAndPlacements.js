@@ -22,7 +22,7 @@ export const JobsAndPlacements = () => {
           <LoadingJobs />
         ) : jobsContext.jobs.length > 0 ? (
           jobsContext.jobs.map((job) => {
-            console.log(job)
+            // console.log(job)
             return (
               <div key={job._id}>
                 <JobsCard job={job} />

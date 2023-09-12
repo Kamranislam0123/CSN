@@ -130,6 +130,7 @@ export const PostCard = ({ post }) => {
   const handleCommentSend = async () => {
     await postContext.addComment(post._id, authContext.user._id, comment)
   }
+
   return (
     <Card variant="elevation" elevation={3} className="mb-3">
       {showPost && (
@@ -164,7 +165,7 @@ export const PostCard = ({ post }) => {
               {authContext.user._id === post.user._id ? (
                 <MenuItem onClick={handleModalPost}>Edit</MenuItem>
               ) : null}
-              {authContext.user._id === post.user._id ? (
+              {authContext.user._id === post.user._id || authContext.user.role === 1 ? (
                 <MenuItem
                   onClick={() => {
                     postContext.deletePost(authContext.user._id, post._id)
